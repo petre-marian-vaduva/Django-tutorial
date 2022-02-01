@@ -4,7 +4,7 @@ import datetime
 # Create your models here.
 
 class Question(models.Model):
-    question_text = models.CharField(max_length=200)
+    question_text = models.CharField(max_length=200, verbose_name='!!!!')
     pub_date = models.DateTimeField('Date published')
     def __str__(self):
         return self.question_text
@@ -18,4 +18,6 @@ class Choice(models.Model):
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
     def __str__(self):
-        return self.question_text
+        return self.choice_text
+
+
