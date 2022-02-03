@@ -3,7 +3,12 @@
 {% block title %}Detail{% endblock %}
 
 {% block body %}
-    <h2>hello</h2>
-    {% comment %} <h3>{{  }}</h3> {% endcomment %}
+    {% for vi in value %}
+        <h3>{{ vi.choice_text }}</h3>
+        <h3>{{ vi.votes }}</h3>
+    {% endfor %} 
+
+
+
     <p><a href="{% url 'index' %}">Go to Home</a></p>
 {% endblock %}

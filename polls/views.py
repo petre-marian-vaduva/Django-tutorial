@@ -14,10 +14,11 @@ def index(request):
 
 def detail(request, question_id):
     question = Question.objects.get(pk=question_id)
+    value = question.choice_set.all()
     return render(request, 'polls/detail.html', {
-        'question':question
+        'question':question,
+        'value': value
     })
-
 
 def results(request, question_id):
     response = "You're looking at the results of question %s."
@@ -30,3 +31,4 @@ def detail_redirect(request, slug):
     question = Question.objects.get(pk=slug)
     value = question.choice_set.all()
     redirect_path = HttpResponseRedirect(reverse('detail_redirect', args=[value]))
+

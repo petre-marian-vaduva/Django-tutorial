@@ -9,4 +9,12 @@
             {% comment %} {% url 'detail' list.pk %}              {% endcomment %}
         </ul>
     {% endfor %}
+
+    <form action="/polls/" method='post'>
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input id='username' type="text" name='username' value='--Your username here--'>
+        <input type="submit" value='Submit'>
+    </form>
 {% endblock %}
+
